@@ -3,12 +3,10 @@
 //Name -
 
 import java.util.Scanner;
-import static java.lang.System.*;
 import java.lang.Math;
 
 public class DogFood
 {
-   private double amount;
    private double cups;
 
    public DogFood()
@@ -54,7 +52,6 @@ public class DogFood
    public double getAmount()
    {
 	double amount = Math.ceil(cups/60);
-	this.amount = amount;
    	return amount;
    }
 

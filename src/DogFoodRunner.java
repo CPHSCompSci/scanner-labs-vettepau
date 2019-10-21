@@ -3,11 +3,8 @@
 //Name -
 
 import java.util.Scanner;
-import static java.lang.System.*;
-
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.Math;
 
 public class DogFoodRunner
 {
