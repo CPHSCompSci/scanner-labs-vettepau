@@ -9,6 +9,7 @@ import java.lang.Math;
 public class DogFood
 {
    private double amount;
+   private double cups;
 
    public DogFood()
    {		
@@ -19,17 +20,46 @@ public class DogFood
 		Scanner chopper = new Scanner(line);
 		double cups = 0;
 
-		//calc code goes here
-
+		while(chopper.hasNextInt()) {
+			int x = chopper.nextInt();
+			if(x <= 4) {
+				cups += .5*7;
+			}
+			else if(x <= 7) {
+				cups += 1*7;
+			}
+			else if(x <= 9) {
+				cups += 1.5*7;
+			}
+			else if(x <= 19) {
+				cups += 2*7;
+			}
+			else if(x <= 39) {
+				cups += 3.5*7;
+			}
+			else if(x <= 59) {
+				cups += 4.5*7;
+			}
+			else if(x <= 79) {
+				cups += 6.0*7;
+			}
+			else {
+				cups += 7.5*7;
+			}
+		}
+		this.cups = cups;
+		chopper.close();
    }
 
    public double getAmount()
    {
-   	return 0;
+	double amount = Math.ceil(cups/60);
+	this.amount = amount;
+   	return amount;
    }
 
 	public String toString()
 	{
-		return "";
+		return getAmount() + " - 10 Pound Bags\n";
 	}
 }
