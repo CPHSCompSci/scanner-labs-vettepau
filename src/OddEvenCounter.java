@@ -11,14 +11,17 @@ public class OddEvenCounter
 
    public OddEvenCounter()
    {
+	   setLine(" ");
    }
 
    public OddEvenCounter(String s)
    {
+	   setLine(s);
    }
 
 	public void setLine(String s)
 	{
+		this.line = s;
 	}
 
 	public int getEvenCount()

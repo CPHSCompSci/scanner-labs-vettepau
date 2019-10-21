@@ -2,69 +2,52 @@
 //www.apluscompsci.com
 //Name - Paul Vetter
 
-import java.util.ArrayList;
 import java.util.Scanner;
-import static java.lang.System.*;
-
-import java.io.File;
-import java.io.FileNotFoundException;
 
 public class LineCounter
 {
-	private ArrayList<String> lines;
    private String line;
-
-  /* public LineCounter()
-   {
-		
-   }*/
 
    public LineCounter()
    {
-	   setLine();
-	   getLine();
+	setLine(" ");	
    }
 
-	public void setLine()
-	{
-		try {
-			Scanner fileScanner = new Scanner(new File("LineCounter"));
-			
-			while(fileScanner.hasNextLine()) {
-			String line = fileScanner.nextLine();
-			lines.add(line);
-			}
-			fileScanner.close();
-			
-			}catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
+   public LineCounter(String line)
+   {
+	setLine(line);
+   }
+
+	public void setLine(String line)
+	{	
+		this.line = line;
 	}
 
-	public int getCount(String s)
+	public int getCount()
 	{
-		int count=1;	
-		int num = indexRepeat(' ', s);
-		if(num != 0) {
-			count = num++;
+		int count = 0;
+		
+		Scanner counter = new Scanner(line);
+		
+		while(counter.hasNextInt())
+		{
+			counter.nextInt();
+			count++;
 		}
+		counter.close();
 		return count;
 	}
 
-	public void getLine()
+	public String getLine()
 	{
-		for(String a: lines) {
-			String line = a.toString();
-			int b = getCount(line);
-			System.out.println("count = " + b);
-		}
+		return line;
 	}
 
-	public String toString(int a)
+	public String toString()
 	{
-		return lines.get(a);
+		return "count = " + getCount();
 	}
-	public static int indexRepeat(char letter, String word)		
+	/*public static int indexRepeat(char letter, String word)		
 	  {
 		  int a;
 		  int num = 0;
@@ -76,5 +59,5 @@ public class LineCounter
 			  }
 		  }	  
 		return num;
-	  }
+	  }*/
 }
