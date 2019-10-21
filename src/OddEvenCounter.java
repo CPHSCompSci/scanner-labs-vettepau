@@ -3,7 +3,6 @@
 //Name -
 
 import java.util.Scanner;
-import static java.lang.System.*;
 
 public class OddEvenCounter
 {
@@ -26,18 +25,44 @@ public class OddEvenCounter
 
 	public int getEvenCount()
 	{
-		int count= 0;
-		return count;
+		int evenCount = 0;
+		
+		Scanner counter = new Scanner(line);
+		
+		while(counter.hasNextInt())
+		{
+			int x = counter.nextInt();
+			if(x % 2 == 0) {
+			evenCount++;
+			}
+			else {}
+		}
+		counter.close();
+		return evenCount;
 	}
 
 	public int getOddCount()
 	{
-		int count= 0;
-		return count;
+		int oddCount = 0;
+		
+		Scanner counter2 = new Scanner(line);
+		
+		while(counter2.hasNextInt()) {
+			int x = counter2.nextInt();
+			if(x % 2 == 0) {
+				
+			}
+			else
+			{
+				oddCount++;
+			}
+		}
+		counter2.close();
+		return oddCount;
 	}
 
 	public String toString( )
 	{
-		return "";
+		return "even count = " + getEvenCount() + "\nodd count = " + getOddCount() + "\n";
 	}
 }

@@ -17,7 +17,7 @@ public class OddEvenCounterRunner
 		   for(;scan.hasNextLine();)
 			{
 				String line = scan.nextLine();
-				LineCounter OE = new LineCounter(line);
+				OddEvenCounter OE = new OddEvenCounter(line);
 				
 				System.out.println(line);
 				System.out.println(OE);
